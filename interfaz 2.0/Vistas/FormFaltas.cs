@@ -40,7 +40,12 @@ namespace interfaz_2._0
                     dataGridView1.DataSource = _deuda.consultarDeuda();
                     estiloTabla();
                     estiloTabla2();
-                    
+                    /* --- para que no se vea la primer columna */
+                    DataGridViewColumn column = dataGridView1.Columns[0];
+                    column.Visible = false;
+                    DataGridViewColumn column2 = dataGridView2.Columns[0];
+                    column2.Visible = false;
+
                 }
             }
         }
@@ -137,61 +142,73 @@ namespace interfaz_2._0
 
                 dataGridView2.Rows.Add(item);
             }
+
+
+            DataGridViewColumn column = dataGridView2.Columns[0];
+            column.Visible = false; 
         }
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            object l = L.linea();
-
-            DateTime fechaActual = DateTime.Now;
-
-            List<string> idsDeuda = montoTotal(cartDeuda);
-            decimal monto = Convert.ToDecimal(idsDeuda[idsDeuda.Count - 1]); //monto total de todas las deudas
-            idsDeuda.RemoveAt(idsDeuda.Count - 1); // elimina el monto que tenia y deja solo los ids de las deudas
-
-            _ingreso.monto = Convert.ToInt32(monto);
-            _ingreso.descripcion = "pagado";
-            _ingreso.usuarioId = 1;
-            _ingreso.cajaId = 1;
-            _ingreso.fecha = fechaActual.ToString("dd/MM/yyyy");
-
-            if (_ingreso.agregar(_ingreso, l) == 1)// verifica si se registro el ingreso
+            if(dataGridView2.Rows.Count == 1 )
             {
-                string llaveID = _ingreso.ultimaIngreso(l);
-                foreach (var item in idsDeuda)
-                {
-                    Capa_Negocio.detalleIngreso _detalleIngreso = new Capa_Negocio.detalleIngreso();
-                    _detalleIngreso.ingresoId = int.Parse(llaveID);
-                    _detalleIngreso.deudaId = Convert.ToInt32(item);
-                    if (_detalleIngreso.agregar(_detalleIngreso, l) == 1)
-                    {
-                        if (_deuda.actualizar(Convert.ToInt32(item), l) == 1)
-                        {
-                            MessageBox.Show("entro a actualizar la deuda del socio");
-                        }
-                        MessageBox.Show("Pago Existoso");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Fallo al completar el pago");
-                    }
-                }
-                // actualizar el monto de la base  de datos triger manual 
-                if (_caja.agregar(Convert.ToInt32(monto), l) == 1)
-                {
-                    MessageBox.Show("se Actualizo la CAJA");
-
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo actualizar la CAJA");
-                }
-                L.flinea(l);
+                MessageBox.Show("Valla no haz seleccionado ninguna deuda");
             }
             else
             {
-                L.DeshacerLinea(l);
+                object l = L.linea();
+
+                DateTime fechaActual = DateTime.Now;
+
+                List<string> idsDeuda = montoTotal(cartDeuda);
+                decimal monto = Convert.ToDecimal(idsDeuda[idsDeuda.Count - 1]); //monto total de todas las deudas
+                idsDeuda.RemoveAt(idsDeuda.Count - 1); // elimina el monto que tenia y deja solo los ids de las deudas
+
+                _ingreso.monto = Convert.ToInt32(monto);
+                _ingreso.descripcion = "pagado";
+                _ingreso.usuarioId = 1;
+                _ingreso.cajaId = 1;
+                _ingreso.fecha = fechaActual.ToString("dd/MM/yyyy");
+
+                if (_ingreso.agregar(_ingreso, l) == 1)// verifica si se registro el ingreso
+                {
+                    string llaveID = _ingreso.ultimaIngreso(l);
+                    foreach (var item in idsDeuda)
+                    {
+                        Capa_Negocio.detalleIngreso _detalleIngreso = new Capa_Negocio.detalleIngreso();
+                        _detalleIngreso.ingresoId = int.Parse(llaveID);
+                        _detalleIngreso.deudaId = Convert.ToInt32(item);
+                        if (_detalleIngreso.agregar(_detalleIngreso, l) == 1)
+                        {
+                            if (_deuda.actualizar(Convert.ToInt32(item), l) == 1)
+                            {
+                                MessageBox.Show("entro a actualizar la deuda del socio");
+                            }
+                            MessageBox.Show("Pago Existoso");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fallo al completar el pago");
+                        }
+                    }
+                    // actualizar el monto de la base  de datos triger manual 
+                    if (_caja.agregar(Convert.ToInt32(monto), l) == 1)
+                    {
+                        MessageBox.Show("se Actualizo la CAJA");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo actualizar la CAJA");
+                    }
+                    L.flinea(l);
+                }
+                else
+                {
+                    L.DeshacerLinea(l);
+                }
             }
+            
 
 
         }

@@ -22,21 +22,72 @@ namespace Capa_Negocio
 
         public DataTable consultarDeuda(string interno)
         {
-            string sql = "select d.deudaId, p.nombre, p.apellidoPaterno, t.nombre,d.descripcion,d.fecha ,t.monto  from deudas d \r\n  inner join tipoDeudas t ON d.tipoDeudaId = t.tipoDeudaId\r\n  inner join socios s ON s.socioId = d.socioId\r\n  inner join personas p ON s.personaId = p.personaId where d.estado = 'A' and s.socioId = $Interno";
+            string sql = "select d.deudaId,s.socioId, p.nombre, p.apellidoPaterno, t.nombre,d.descripcion,d.fecha ,t.monto  from deudas d \r\n  inner join tipoDeudas t ON d.tipoDeudaId = t.tipoDeudaId\r\n  inner join socios s ON s.socioId = d.socioId\r\n  inner join personas p ON s.personaId = p.personaId where d.estado = 'A' and s.socioId = $Interno";
 
             sql = sql.Replace("$Interno", interno);
-            return consultar(sql);
+            return consultor(consultar(sql));
+            //return consultar(sql);
         }
         public DataTable consultarDeuda()
         {
-            string sql = "  select d.deudaId, p.nombre, p.apellidoPaterno, t.nombre,d.descripcion,d.fecha ,t.monto  from deudas d \r\n  inner join tipoDeudas t ON d.tipoDeudaId = t.tipoDeudaId\r\n  inner join socios s ON s.socioId = d.socioId\r\n  inner join personas p ON s.personaId = p.personaId where d.estado = 'A' ";
-            return consultar(sql);
+            string sql = "  select d.deudaId,s.socioId, p.nombre, p.apellidoPaterno, t.nombre,d.descripcion,d.fecha ,t.monto  from deudas d \r\n  inner join tipoDeudas t ON d.tipoDeudaId = t.tipoDeudaId\r\n  inner join socios s ON s.socioId = d.socioId\r\n  inner join personas p ON s.personaId = p.personaId where d.estado = 'A' ";
+            //return consultar(sql);
+            return consultor(consultar(sql));
         }
         public int actualizar(int nombre, object l)
         {
             string sql = "update deudas set estado = 'I' where deudaId = $DeudaId";
             sql = sql.Replace("$DeudaId", nombre.ToString());
             return ejecutar(sql, l);
+        }
+
+        /* -----    Diseño de tabla final implementacion ---------*/
+
+        public DataTable consultor(DataTable _tabla)
+        {
+            if (vacioDT(_tabla))
+            {
+                return finalTable(_tabla);
+            }
+            return _tabla;
+            
+        }
+
+        public bool vacioDT(DataTable _tabla)
+        {
+            if (_tabla.Rows.Count > 0) { return true; }
+            else
+            {
+                return false;
+            }
+        }
+        public DataTable finalTable(DataTable _tabla)
+        {
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add("DeudaId");
+            tabla.Columns.Add("Interno");
+            tabla.Columns.Add("NombreCompleto");
+            tabla.Columns.Add("Deuda");
+            tabla.Columns.Add("Descripcion");
+            tabla.Columns.Add("Fecha");
+            tabla.Columns.Add("Monto");
+
+            foreach (DataRow fila in _tabla.Rows)
+            {
+                string valor0 = fila["deudaId"].ToString();
+                string valor01 = fila["socioId"].ToString();
+                string valor1 = fila["nombre"].ToString();
+                string valor2 = fila["apellidoPaterno"].ToString();
+                string valorConcatenado = $"{valor1} {valor2}";
+                string valor3 = fila["nombre1"].ToString();
+                string valor4 = fila["descripcion"].ToString();
+                string valor5 = fila["fecha"].ToString();
+                string valor6 = fila["monto"].ToString();
+                tabla.Rows.Add(valor0,valor01, valorConcatenado, valor3, valor4, valor5, valor6);
+            }
+
+            return tabla;
+
         }
     }
 }

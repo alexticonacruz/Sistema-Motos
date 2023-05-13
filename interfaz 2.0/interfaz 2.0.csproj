@@ -133,6 +133,12 @@
     <Compile Include="Vistas\FormReporte.Designer.cs">
       <DependentUpon>FormReporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\historialSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\historialSocio.Designer.cs">
+      <DependentUpon>historialSocio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\listaSocio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </Compile>
     <EmbeddedResource Include="Vistas\FormReporte.resx">
       <DependentUpon>FormReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\historialSocio.resx">
+      <DependentUpon>historialSocio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\listaSocio.resx">
       <DependentUpon>listaSocio.cs</DependentUpon>

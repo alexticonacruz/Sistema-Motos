@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADDDFA67-9783-47D4-9B4F-7B174AAFE96E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>interfaz_2._0</RootNamespace>
+    <AssemblyName>interfaz 2.0</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MyButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyButton.Designer.cs">
+      <DependentUpon>MyButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AddMensualidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\AddMensualidad.Designer.cs">
+      <DependentUpon>AddMensualidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\detalleEgreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\detalleEgreso.Designer.cs">
+      <DependentUpon>detalleEgreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FormFaltas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormFaltas.Designer.cs">
+      <DependentUpon>FormFaltas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FormMensualidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormMensualidades.Designer.cs">
+      <DependentUpon>FormMensualidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FormActualizarsocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormActualizarsocio.Designer.cs">
+      <DependentUpon>FormActualizarsocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FormRegistrarAsociación.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormRegistrarAsociación.Designer.cs">
+      <DependentUpon>FormRegistrarAsociación.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FormRegistrarDeuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormRegistrarDeuda.Designer.cs">
+      <DependentUpon>FormRegistrarDeuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FormRegistrarEgreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormRegistrarEgreso.Designer.cs">
+      <DependentUpon>FormRegistrarEgreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FormRegistrarMotorizado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormRegistrarMotorizado.Designer.cs">
+      <DependentUpon>FormRegistrarMotorizado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FormRegistrarSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormRegistrarSocio.Designer.cs">
+      <DependentUpon>FormRegistrarSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\FormReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormReporte.Designer.cs">
+      <DependentUpon>FormReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\listaSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\listaSocio.Designer.cs">
+      <DependentUpon>listaSocio.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MyButton.resx">
+      <DependentUpon>MyButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\AddMensualidad.resx">
+      <DependentUpon>AddMensualidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\detalleEgreso.resx">
+      <DependentUpon>detalleEgreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormFaltas.resx">
+      <DependentUpon>FormFaltas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormMensualidades.resx">
+      <DependentUpon>FormMensualidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormActualizarsocio.resx">
+      <DependentUpon>FormActualizarsocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormRegistrarAsociación.resx">
+      <DependentUpon>FormRegistrarAsociación.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormRegistrarDeuda.resx">
+      <DependentUpon>FormRegistrarDeuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormRegistrarEgreso.resx">
+      <DependentUpon>FormRegistrarEgreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormRegistrarMotorizado.resx">
+      <DependentUpon>FormRegistrarMotorizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormRegistrarSocio.resx">
+      <DependentUpon>FormRegistrarSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Vistas\FormReporte.resx">
+      <DependentUpon>FormReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\listaSocio.resx">
+      <DependentUpon>listaSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Capa_Datos\Capa_Datos.csproj">
+      <Project>{ce32dcf6-9534-4560-9cd1-12d0445990d4}</Project>
+      <Name>Capa_Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Capa_Negocio\Capa_Negocio.csproj">
+      <Project>{5f9a2249-9544-449e-a6ac-18d102f55744}</Project>
+      <Name>Capa_Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="img\advertencia.png" />
+    <Content Include="Properties\advertencia.png" />
+    <None Include="Resources\info.jpg" />
+    <None Include="Resources\Vacio.ico" />
+    <None Include="Resources\alerta.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

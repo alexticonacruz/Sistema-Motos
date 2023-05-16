@@ -253,7 +253,7 @@ select * from Usuario
 
 
   /* Consultas Verificadas*/
-
+/* trae la deuda de un socio */
 select d.deudaId,s.socioId, p.nombre, p.apellidoPaterno,cD.nombre AS CATEGORIA, t.nombre,d.descripcion,d.fecha ,t.monto  from deudas d
 inner join tipoDeudas t ON d.tipoDeudaId = t.tipoDeudaId
 inner join categoriaDeuda cD on t.categoriaId = cD.categoriaId
@@ -261,6 +261,14 @@ inner join socios s ON s.socioId = d.socioId
 inner join personas p ON s.personaId = p.personaId 
 where d.estado = 'A' and s.socioId = 5 and cD.nombre = 'Mensualidad'
 
+/*Crea una categoria*/
+
+/* Crea un deuda*/
+insert into tipoDeudas values ('$nombre',$monto,$categoriaId)
+
 select * from deudas
 select * from tipoDeudas
 select * from categoriaDeuda
+select categoriaId from categoriaDeuda where nombre = Tikes
+select categoriaId from categoriaDeuda where nombre = 'tikes'
+insert into tipoDeudas values ('Chaleco sucio',55,Tikes)

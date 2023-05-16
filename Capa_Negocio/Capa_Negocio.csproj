@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="caja.cs" />
+    <Compile Include="categoriaDeuda.cs" />
     <Compile Include="detalleDeuda.cs" />
     <Compile Include="detalleIngreso.cs" />
     <Compile Include="deuda.cs" />

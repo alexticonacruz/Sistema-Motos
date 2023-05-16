@@ -12,6 +12,7 @@ namespace Capa_Negocio
         public int deudaId { get; set; }
         public string nombre { get; set; }
         public int monto { get; set; }
+        public int categoriaId { get; set; }
 
         public int byId(string nombre)
         {
@@ -88,6 +89,21 @@ namespace Capa_Negocio
 
             return tabla;
 
+        }
+        /* Crear una deuda nueva  a su respenctiva Categoria*/
+        public int crearDeuda(deuda _deuda, object L)
+        {
+            string sql = "insert into tipoDeudas values ('$nombre',$monto,$categoriaId)";
+            sql = sql.Replace("$nombre", _deuda.nombre);
+            sql = sql.Replace("$monto", _deuda.monto.ToString());
+            sql = sql.Replace("$categoriaId", _deuda.categoriaId.ToString());
+            return ejecutar(sql, L);
+        }
+        public  string buscarNameCategory(object L,string dato)
+        {
+            string sql = "select categoriaId from categoriaDeuda where nombre = '$catId'";
+            sql = sql.Replace("$catId", dato);
+            return consultar(sql, L).Rows[0][0].ToString();
         }
     }
 }

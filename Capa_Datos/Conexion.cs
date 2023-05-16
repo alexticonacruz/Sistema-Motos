@@ -115,6 +115,34 @@ namespace Capa_Datos
             }
             return nombres;
         }
+        protected List<string> listaCategorias()
+        {
+
+            string connectionString = "Provider = SQLOLEDB.1;Data Source =" + servidor + ";Initial Catalog=" + bd + ";Integrated Security=SSPI";
+            string tableName = "categoriaDeuda";
+            string columnName = "nombre";
+
+            List<string> nombres = new List<string>();
+
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            {
+                connection.Open();
+
+                OleDbCommand command = new OleDbCommand($"SELECT {columnName} FROM {tableName}", connection);
+
+                using (OleDbDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string nombre = reader.GetString(0);
+                        nombres.Add(nombre);
+                    }
+                }
+
+                connection.Close();
+            }
+            return nombres;
+        }
         //---------------------------------------------------------------
         //By id deudas
         protected int byID(string consulta)

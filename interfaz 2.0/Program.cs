@@ -17,7 +17,7 @@ namespace interfaz_2._0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AgregarMulta());
+            Application.Run(new FormLogin());
         }
     }
 }

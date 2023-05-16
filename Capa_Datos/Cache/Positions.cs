@@ -8,8 +8,9 @@ namespace Capa_Datos.Cache
 {
     public class Positions
     {
-        public const string Administrator = "Administrator";
-        public const string Receptionist = "Receptionist";
-        public const string Accounting = "Accounting";
+        public const string Presidente = "Presidente";
+        public const string VicePresidente = "VicePresidente";
+        public const string Tesorera = "Tesorera";
+        public const string secretaria = "secretaria";
     }
 }

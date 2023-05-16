@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Capa_Datos.Cache;
+using Capa_Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace interfaz_2._0.Vistas
 {
@@ -79,6 +82,48 @@ namespace interfaz_2._0.Vistas
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtuser.Text != "Username" && txtuser.TextLength > 2)
+            {
+                if (txtcontraseña.Text != "Password")
+                {
+                    UserModel user = new UserModel();
+                    var validLogin = user.LoginUser(txtuser.Text, txtcontraseña.Text);
+                    if (validLogin == true)
+                    {
+                        FormPrincipal mainMenu = new FormPrincipal();
+                        MessageBox.Show("Bienvenido " + UserCache.LoginName);
+                        mainMenu.Show();
+                        mainMenu.FormClosed += Logout;
+                        this.Hide();
+                    }
+                    else
+                    {
+                        msgError("Incorrect username or password entered. \n   Please try again.");
+                        txtcontraseña.Text = "Password";
+                        txtcontraseña.UseSystemPasswordChar = false;
+                        txtuser.Focus();
+                    }
+                }
+                else msgError("Please enter password.");
+            }
+            else msgError("Please enter username.");
+        }
+        private void msgError(string msg)
+        {
+            lberror.Text = "    " + msg;
+            lberror.Visible = true;
+        }
+        private void Logout(object sender, FormClosedEventArgs e)
+        {
+            txtcontraseña.Text = "Password";
+            txtcontraseña.UseSystemPasswordChar = false;
+            txtuser.Text = "Username";
+            lberror.Visible = false;
+            this.Show();
         }
     }
 }

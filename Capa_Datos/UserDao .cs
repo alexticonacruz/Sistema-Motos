@@ -34,10 +34,9 @@ namespace Capa_Datos
                             UserCache.IdUser = reader.GetInt32(0);
                             UserCache.LoginName = reader.GetString(1);
                             UserCache.Password = reader.GetString(2);
-                            UserCache.FirstName = reader.GetString(3);
-                            UserCache.LastName = reader.GetString(4);
-                            UserCache.Position = reader.GetString(5);
-                            UserCache.Email = reader.GetString(6);
+
+                            UserCache.Position = reader.GetString(3);
+
                         }
                         return true;
                     }
@@ -48,11 +47,19 @@ namespace Capa_Datos
         }
         public void anyMethod()
         {
-            if (UserCache.Position == Positions.Receptionist)
+            if (UserCache.Position == Positions.Presidente)
             {
                 //Lineas o métodos que quieras ejecutar para el cargo recepcionita
             }
-            if (UserCache.Position == Positions.Accounting)
+            if (UserCache.Position == Positions.VicePresidente)
+            {
+                //Lineas o métodos que quieras ejecutar para el cargo contador
+            }
+            if (UserCache.Position == Positions.Tesorera)
+            {
+                //Lineas o métodos que quieras ejecutar para el cargo contador
+            }
+            if (UserCache.Position == Positions.secretaria)
             {
                 //Lineas o métodos que quieras ejecutar para el cargo contador
             }

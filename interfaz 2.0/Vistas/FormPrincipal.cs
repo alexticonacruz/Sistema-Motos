@@ -1,4 +1,5 @@
-﻿using interfaz_2._0.Vistas;
+﻿using Capa_Datos.Cache;
+using interfaz_2._0.Vistas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace interfaz_2._0
 {
     public partial class FormPrincipal : Form
     {
+        private Form currentChildForm;
         public FormPrincipal()
         {
             InitializeComponent();
@@ -174,15 +176,14 @@ namespace interfaz_2._0
 
         private void btnsub1_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormMensualidades>();
+           
             HideSubMenu();
         }
 
         private void btnsub2_Click(object sender, EventArgs e)
         {
             //AbrirFormulario<FormFaltas>();
-            FormFaltas formulario = new FormFaltas();
-            cambiaformularios(formulario);
+            OpenChildForm(new FormFaltas());
             HideSubMenu();
         }
 
@@ -237,21 +238,47 @@ namespace interfaz_2._0
         private void btnagregarsocio_Click(object sender, EventArgs e)
         {
             HideSubMenu();
-            //AbrirFormulario<FormRegistrarSocio>();
-            FormRegistrarSocio formulario = new FormRegistrarSocio();
-            cambiaformularios(formulario);
+            OpenChildForm(new FormRegistrarSocio());
         }
 
         private void btnactualizarsocio_Click(object sender, EventArgs e)
         {
             HideSubMenu();
-            FormActualizarsocio formulario = new FormActualizarsocio();
-            cambiaformularios(formulario);
+            OpenChildForm(new FormActualizarsocio());
         }
 
         private void panelcentral_Paint(object sender, PaintEventArgs e)
         {
+            ManagePermissions();
+        }
+        private void ManagePermissions()
+        {
+            if (UserCache.Position == Positions.Presidente)
+            {
 
+
+            }
+            if (UserCache.Position == Positions.VicePresidente)
+            {
+                //Codes
+            }
+            if (UserCache.Position == Positions.Tesorera)
+            {
+                //Codes
+            }
+            if (UserCache.Position == Positions.secretaria)
+            {
+                btnsub1.Enabled = false;
+                btnagregarsocio.Enabled = false;
+                btnactualizarsocio.Enabled = false;
+                button12.Enabled = false;
+                button3.Enabled = false;
+                button8.Enabled = false;
+                button5.Enabled = false;
+                button6.Enabled = false;
+
+
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -269,24 +296,19 @@ namespace interfaz_2._0
         private void button7_Click(object sender, EventArgs e)
         {
             HideSubMenu();
-            listaSocio formulario = new listaSocio();
-            cambiaformularios(formulario);
+            OpenChildForm(new listaSocio());
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             HideSubMenu();
-            //AbrirFormulario<FormRegistrarSocio>();
-            FormRegistrarEgreso formulario = new FormRegistrarEgreso();
-            cambiaformularios(formulario);
+            OpenChildForm(new FormRegistrarEgreso());
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             HideSubMenu();
-            //AbrirFormulario<FormRegistrarSocio>();
-            FormRegistrarDeuda formulario = new FormRegistrarDeuda();
-            cambiaformularios(formulario);
+            OpenChildForm(new FormRegistrarDeuda());
         }
 
         private void FormPrincipal_Load(object sender, EventArgs e)
@@ -294,9 +316,26 @@ namespace interfaz_2._0
 
         }
 
+        private void button12_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            OpenChildForm(new historialSocio());
+        }
+
         private void btncerrar_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new detalleEgreso());
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            OpenChildForm(new AddMensualidad());
         }
         #endregion
 
@@ -322,6 +361,24 @@ namespace interfaz_2._0
 
             // Mostrar el formulario
             formulario.Show();
+        }
+        private void OpenChildForm(Form childForm)
+        {
+            //open only form
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelcentral.Controls.Add(childForm);
+            panelcentral.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
         }
     }
 }

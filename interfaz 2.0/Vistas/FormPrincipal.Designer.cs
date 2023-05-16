@@ -57,6 +57,8 @@
             this.btnmin = new System.Windows.Forms.Button();
             this.btnmax = new System.Windows.Forms.Button();
             this.btncerrar = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.panelprincipal.SuspendLayout();
             this.panellateral.SuspendLayout();
             this.Submenudeudas.SuspendLayout();
@@ -118,9 +120,9 @@
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(0, 578);
+            this.button6.Location = new System.Drawing.Point(0, 641);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(200, 50);
+            this.button6.Size = new System.Drawing.Size(183, 50);
             this.button6.TabIndex = 10;
             this.button6.Text = "Reporte";
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -136,9 +138,9 @@
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 528);
+            this.button5.Location = new System.Drawing.Point(0, 591);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(200, 50);
+            this.button5.Size = new System.Drawing.Size(183, 50);
             this.button5.TabIndex = 9;
             this.button5.Text = "Registrar Motorizado";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -148,11 +150,12 @@
             // Submenudeudas
             // 
             this.Submenudeudas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.Submenudeudas.Controls.Add(this.button8);
             this.Submenudeudas.Controls.Add(this.button11);
             this.Submenudeudas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Submenudeudas.Location = new System.Drawing.Point(0, 484);
+            this.Submenudeudas.Location = new System.Drawing.Point(0, 515);
             this.Submenudeudas.Name = "Submenudeudas";
-            this.Submenudeudas.Size = new System.Drawing.Size(200, 44);
+            this.Submenudeudas.Size = new System.Drawing.Size(183, 76);
             this.Submenudeudas.TabIndex = 9;
             // 
             // button11
@@ -164,7 +167,7 @@
             this.button11.Location = new System.Drawing.Point(0, 0);
             this.button11.Name = "button11";
             this.button11.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.button11.Size = new System.Drawing.Size(200, 41);
+            this.button11.Size = new System.Drawing.Size(183, 35);
             this.button11.TabIndex = 0;
             this.button11.Text = "Registrar";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -180,9 +183,9 @@
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 434);
+            this.button4.Location = new System.Drawing.Point(0, 465);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(200, 50);
+            this.button4.Size = new System.Drawing.Size(183, 50);
             this.button4.TabIndex = 8;
             this.button4.Text = "Deudas";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -195,9 +198,9 @@
             this.Submenuegreso.Controls.Add(this.button9);
             this.Submenuegreso.Controls.Add(this.button10);
             this.Submenuegreso.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Submenuegreso.Location = new System.Drawing.Point(0, 347);
+            this.Submenuegreso.Location = new System.Drawing.Point(0, 378);
             this.Submenuegreso.Name = "Submenuegreso";
-            this.Submenuegreso.Size = new System.Drawing.Size(200, 87);
+            this.Submenuegreso.Size = new System.Drawing.Size(183, 87);
             this.Submenuegreso.TabIndex = 8;
             // 
             // button9
@@ -209,11 +212,12 @@
             this.button9.Location = new System.Drawing.Point(0, 41);
             this.button9.Name = "button9";
             this.button9.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(200, 43);
+            this.button9.Size = new System.Drawing.Size(183, 43);
             this.button9.TabIndex = 1;
             this.button9.Text = "Busqueda";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -224,7 +228,7 @@
             this.button10.Location = new System.Drawing.Point(0, 0);
             this.button10.Name = "button10";
             this.button10.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(200, 41);
+            this.button10.Size = new System.Drawing.Size(183, 41);
             this.button10.TabIndex = 0;
             this.button10.Text = "Registrar";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -240,9 +244,9 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 297);
+            this.button3.Location = new System.Drawing.Point(0, 328);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 50);
+            this.button3.Size = new System.Drawing.Size(183, 50);
             this.button3.TabIndex = 7;
             this.button3.Text = "Egreso";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -252,13 +256,14 @@
             // panelsubmenusocio
             // 
             this.panelsubmenusocio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+            this.panelsubmenusocio.Controls.Add(this.button12);
             this.panelsubmenusocio.Controls.Add(this.button7);
             this.panelsubmenusocio.Controls.Add(this.btnactualizarsocio);
             this.panelsubmenusocio.Controls.Add(this.btnagregarsocio);
             this.panelsubmenusocio.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelsubmenusocio.Location = new System.Drawing.Point(0, 180);
             this.panelsubmenusocio.Name = "panelsubmenusocio";
-            this.panelsubmenusocio.Size = new System.Drawing.Size(200, 117);
+            this.panelsubmenusocio.Size = new System.Drawing.Size(183, 148);
             this.panelsubmenusocio.TabIndex = 7;
             // 
             // button7
@@ -270,7 +275,7 @@
             this.button7.Location = new System.Drawing.Point(0, 76);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(200, 41);
+            this.button7.Size = new System.Drawing.Size(183, 35);
             this.button7.TabIndex = 2;
             this.button7.Text = "Listar";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -286,7 +291,7 @@
             this.btnactualizarsocio.Location = new System.Drawing.Point(0, 38);
             this.btnactualizarsocio.Name = "btnactualizarsocio";
             this.btnactualizarsocio.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnactualizarsocio.Size = new System.Drawing.Size(200, 38);
+            this.btnactualizarsocio.Size = new System.Drawing.Size(183, 38);
             this.btnactualizarsocio.TabIndex = 1;
             this.btnactualizarsocio.Text = "Editar";
             this.btnactualizarsocio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -302,7 +307,7 @@
             this.btnagregarsocio.Location = new System.Drawing.Point(0, 0);
             this.btnagregarsocio.Name = "btnagregarsocio";
             this.btnagregarsocio.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnagregarsocio.Size = new System.Drawing.Size(200, 38);
+            this.btnagregarsocio.Size = new System.Drawing.Size(183, 38);
             this.btnagregarsocio.TabIndex = 0;
             this.btnagregarsocio.Text = "Registrar";
             this.btnagregarsocio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -320,7 +325,7 @@
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(0, 130);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 50);
+            this.button2.Size = new System.Drawing.Size(183, 50);
             this.button2.TabIndex = 6;
             this.button2.Text = "Socio";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -335,7 +340,7 @@
             this.panelsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelsubmenu.Location = new System.Drawing.Point(0, 50);
             this.panelsubmenu.Name = "panelsubmenu";
-            this.panelsubmenu.Size = new System.Drawing.Size(200, 80);
+            this.panelsubmenu.Size = new System.Drawing.Size(183, 80);
             this.panelsubmenu.TabIndex = 5;
             // 
             // btnsub2
@@ -347,7 +352,7 @@
             this.btnsub2.Location = new System.Drawing.Point(0, 38);
             this.btnsub2.Name = "btnsub2";
             this.btnsub2.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnsub2.Size = new System.Drawing.Size(200, 38);
+            this.btnsub2.Size = new System.Drawing.Size(183, 38);
             this.btnsub2.TabIndex = 1;
             this.btnsub2.Text = "Registrar";
             this.btnsub2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -363,7 +368,7 @@
             this.btnsub1.Location = new System.Drawing.Point(0, 0);
             this.btnsub1.Name = "btnsub1";
             this.btnsub1.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btnsub1.Size = new System.Drawing.Size(200, 38);
+            this.btnsub1.Size = new System.Drawing.Size(183, 38);
             this.btnsub1.TabIndex = 0;
             this.btnsub1.Text = "Lista de multas";
             this.btnsub1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -381,7 +386,7 @@
             this.btn3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn3.Location = new System.Drawing.Point(0, 0);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(200, 50);
+            this.btn3.Size = new System.Drawing.Size(183, 50);
             this.btn3.TabIndex = 3;
             this.btn3.Text = "Pagos de multas";
             this.btn3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -487,6 +492,38 @@
             this.btncerrar.UseVisualStyleBackColor = true;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click_1);
             // 
+            // button12
+            // 
+            this.button12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.ForeColor = System.Drawing.SystemColors.Control;
+            this.button12.Location = new System.Drawing.Point(0, 111);
+            this.button12.Name = "button12";
+            this.button12.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.button12.Size = new System.Drawing.Size(183, 38);
+            this.button12.TabIndex = 4;
+            this.button12.Text = "Historial Socio";
+            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button8
+            // 
+            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.ForeColor = System.Drawing.SystemColors.Control;
+            this.button8.Location = new System.Drawing.Point(0, 35);
+            this.button8.Name = "button8";
+            this.button8.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.button8.Size = new System.Drawing.Size(183, 43);
+            this.button8.TabIndex = 2;
+            this.button8.Text = "Registrar Mensualidad";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,6 +533,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(800, 450);
             this.Name = "FormPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
@@ -542,6 +580,8 @@
         private System.Windows.Forms.Panel Submenuegreso;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button8;
     }
 }
 

@@ -337,6 +337,18 @@ namespace interfaz_2._0
             HideSubMenu();
             OpenChildForm(new AddMensualidad());
         }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            OpenChildForm(new CategoriaDeuda());
+        }
+
+        private void btnMulta_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            OpenChildForm(new AgregarMulta());
+        }
         #endregion
 
         /*Code by alex */

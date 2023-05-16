@@ -17,7 +17,11 @@ namespace interfaz_2._0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new FormLogin());
+=======
+            Application.Run(new FormPrincipal());
+>>>>>>> 696a9fc (Mejora de rendimiento en interfaz)
         }
     }
 }

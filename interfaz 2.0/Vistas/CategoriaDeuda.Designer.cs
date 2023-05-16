@@ -69,6 +69,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtNombre);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CategoriaDeuda";
             this.Text = "CategoriaDeuda";
             this.Load += new System.EventHandler(this.CategoriaDeuda_Load);

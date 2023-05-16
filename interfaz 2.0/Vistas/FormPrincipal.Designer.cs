@@ -57,8 +57,13 @@
             this.btnmin = new System.Windows.Forms.Button();
             this.btnmax = new System.Windows.Forms.Button();
             this.btncerrar = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.button12 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+=======
+            this.btnCategoria = new System.Windows.Forms.Button();
+            this.btnMulta = new System.Windows.Forms.Button();
+>>>>>>> 696a9fc (Mejora de rendimiento en interfaz)
             this.panelprincipal.SuspendLayout();
             this.panellateral.SuspendLayout();
             this.Submenudeudas.SuspendLayout();
@@ -120,7 +125,11 @@
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+<<<<<<< HEAD
             this.button6.Location = new System.Drawing.Point(0, 641);
+=======
+            this.button6.Location = new System.Drawing.Point(0, 691);
+>>>>>>> 696a9fc (Mejora de rendimiento en interfaz)
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(183, 50);
             this.button6.TabIndex = 10;
@@ -138,7 +147,11 @@
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+<<<<<<< HEAD
             this.button5.Location = new System.Drawing.Point(0, 591);
+=======
+            this.button5.Location = new System.Drawing.Point(0, 641);
+>>>>>>> 696a9fc (Mejora de rendimiento en interfaz)
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(183, 50);
             this.button5.TabIndex = 9;
@@ -150,12 +163,21 @@
             // Submenudeudas
             // 
             this.Submenudeudas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(55)))), ((int)(((byte)(67)))));
+<<<<<<< HEAD
             this.Submenudeudas.Controls.Add(this.button8);
+=======
+            this.Submenudeudas.Controls.Add(this.btnMulta);
+            this.Submenudeudas.Controls.Add(this.btnCategoria);
+>>>>>>> 696a9fc (Mejora de rendimiento en interfaz)
             this.Submenudeudas.Controls.Add(this.button11);
             this.Submenudeudas.Dock = System.Windows.Forms.DockStyle.Top;
             this.Submenudeudas.Location = new System.Drawing.Point(0, 515);
             this.Submenudeudas.Name = "Submenudeudas";
+<<<<<<< HEAD
             this.Submenudeudas.Size = new System.Drawing.Size(183, 76);
+=======
+            this.Submenudeudas.Size = new System.Drawing.Size(183, 157);
+>>>>>>> 696a9fc (Mejora de rendimiento en interfaz)
             this.Submenudeudas.TabIndex = 9;
             // 
             // button11
@@ -167,7 +189,11 @@
             this.button11.Location = new System.Drawing.Point(0, 0);
             this.button11.Name = "button11";
             this.button11.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+<<<<<<< HEAD
             this.button11.Size = new System.Drawing.Size(183, 35);
+=======
+            this.button11.Size = new System.Drawing.Size(183, 48);
+>>>>>>> 696a9fc (Mejora de rendimiento en interfaz)
             this.button11.TabIndex = 0;
             this.button11.Text = "Registrar";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -263,7 +289,11 @@
             this.panelsubmenusocio.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelsubmenusocio.Location = new System.Drawing.Point(0, 180);
             this.panelsubmenusocio.Name = "panelsubmenusocio";
+<<<<<<< HEAD
             this.panelsubmenusocio.Size = new System.Drawing.Size(183, 148);
+=======
+            this.panelsubmenusocio.Size = new System.Drawing.Size(183, 117);
+>>>>>>> 696a9fc (Mejora de rendimiento en interfaz)
             this.panelsubmenusocio.TabIndex = 7;
             // 
             // button7
@@ -275,7 +305,11 @@
             this.button7.Location = new System.Drawing.Point(0, 76);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+<<<<<<< HEAD
             this.button7.Size = new System.Drawing.Size(183, 35);
+=======
+            this.button7.Size = new System.Drawing.Size(183, 41);
+>>>>>>> 696a9fc (Mejora de rendimiento en interfaz)
             this.button7.TabIndex = 2;
             this.button7.Text = "Listar";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -492,6 +526,7 @@
             this.btncerrar.UseVisualStyleBackColor = true;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click_1);
             // 
+<<<<<<< HEAD
             // button12
             // 
             this.button12.Dock = System.Windows.Forms.DockStyle.Top;
@@ -523,6 +558,39 @@
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
+=======
+            // btnCategoria
+            // 
+            this.btnCategoria.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCategoria.FlatAppearance.BorderSize = 0;
+            this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategoria.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCategoria.Location = new System.Drawing.Point(0, 48);
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.btnCategoria.Size = new System.Drawing.Size(183, 48);
+            this.btnCategoria.TabIndex = 1;
+            this.btnCategoria.Text = "Categoria";
+            this.btnCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategoria.UseVisualStyleBackColor = true;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
+            // 
+            // btnMulta
+            // 
+            this.btnMulta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMulta.FlatAppearance.BorderSize = 0;
+            this.btnMulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMulta.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnMulta.Location = new System.Drawing.Point(0, 96);
+            this.btnMulta.Name = "btnMulta";
+            this.btnMulta.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.btnMulta.Size = new System.Drawing.Size(183, 61);
+            this.btnMulta.TabIndex = 2;
+            this.btnMulta.Text = "Multa";
+            this.btnMulta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMulta.UseVisualStyleBackColor = true;
+            this.btnMulta.Click += new System.EventHandler(this.btnMulta_Click);
+>>>>>>> 696a9fc (Mejora de rendimiento en interfaz)
             // 
             // FormPrincipal
             // 
@@ -580,8 +648,13 @@
         private System.Windows.Forms.Panel Submenuegreso;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+<<<<<<< HEAD
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button8;
+=======
+        private System.Windows.Forms.Button btnCategoria;
+        private System.Windows.Forms.Button btnMulta;
+>>>>>>> 696a9fc (Mejora de rendimiento en interfaz)
     }
 }
 

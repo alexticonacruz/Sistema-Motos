@@ -316,10 +316,23 @@ namespace interfaz_2._0
 
         }
 
+<<<<<<< HEAD
         private void button12_Click(object sender, EventArgs e)
         {
             HideSubMenu();
             OpenChildForm(new historialSocio());
+=======
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            CategoriaDeuda formulario = new CategoriaDeuda();
+            cambiaformularios(formulario);
+        }
+
+        private void btnMulta_Click(object sender, EventArgs e)
+        {
+            AgregarMulta agregarMulta = new AgregarMulta();
+            cambiaformularios(agregarMulta);
+>>>>>>> 696a9fc (Mejora de rendimiento en interfaz)
         }
 
         private void btncerrar_Click_1(object sender, EventArgs e)
@@ -342,7 +355,7 @@ namespace interfaz_2._0
         /*Code by alex */
         public void cambiaformularios(Form formulario)
         {
-            if (panelcentral.Controls.Count > 0)
+            while (panelcentral.Controls.Count != 0) // aqui se no logra borrar bien
             {
                 // Supongamos que el formulario está contenido en el índice 0 del panel
                 Form form = (Form)panelcentral.Controls[0]; // Obtener el formulario del panel

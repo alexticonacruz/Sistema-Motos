@@ -269,6 +269,5 @@ insert into tipoDeudas values ('$nombre',$monto,$categoriaId)
 select * from deudas
 select * from tipoDeudas
 select * from categoriaDeuda
-select categoriaId from categoriaDeuda where nombre = Tikes
+
 select categoriaId from categoriaDeuda where nombre = 'tikes'
-insert into tipoDeudas values ('Chaleco sucio',55,Tikes)

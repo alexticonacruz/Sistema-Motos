@@ -130,7 +130,7 @@
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // AgregarDeuda
+            // AgregarMulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -144,7 +144,8 @@
             this.Controls.Add(this.cbbCategoria);
             this.Controls.Add(this.txtMonto);
             this.Controls.Add(this.txtNombre);
-            this.Name = "AgregarDeuda";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "AgregarMulta";
             this.Text = "AgregarDeuda";
             this.Load += new System.EventHandler(this.AgregarDeuda_Load);
             this.ResumeLayout(false);
